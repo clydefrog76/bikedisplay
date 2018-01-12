@@ -64,7 +64,8 @@
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": "",
                 "path": [
-                    "C:/Program Files (x86)/Arduino"
+                    "C:/Program Files (x86)/Arduino",
+                    "C:/Users/ateusch/Programming/Arduino/libraries/Adafruit_SSD1306"
                 ]
             },
             "intelliSenseMode": "msvc-x64"
