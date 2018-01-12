@@ -5,18 +5,17 @@
             "includePath": [
                 "${workspaceRoot}",
                 "C:\\Users\\ateusch\\Programming\\Arduino",
+                "C:\\Users\\ateusch\\Programming\\Arduino\\libraries",
                 "C:\\Users\\ateusch\\Programming\\Arduino\\libraries\\Adafruit_GFX_Library",
                 "C:\\Users\\ateusch\\Programming\\Arduino\\libraries\\Adafruit_SSD1306",
-                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino",
-                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\Wire\\src",
-                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\SPI\\src",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": false,
                 "path": [
                     "${workspaceRoot}",
                     "C:\\Users\\ateusch\\Programming\\Arduino",
-                    "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino"
+                    "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr"
                 ]
             },
             "intelliSenseMode": "msvc-x64"
