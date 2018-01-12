@@ -5,6 +5,7 @@
             "includePath": [
                 "${workspaceRoot}",
                 "C:\\Users\\ateusch\\Programming\\Arduino",
+                "C:\\Users\\ateusch\\Programming\\Arduino\\libraries",
                 "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr"
             ],
             "browse": {
