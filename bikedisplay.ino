@@ -46,8 +46,7 @@ int16_t dig_H4;
 int16_t dig_H5;
 int8_t  dig_H6;
 
-void setup()
-{
+void setup() {
     uint8_t osrs_t = 1;             //Temperature oversampling x 1
     uint8_t osrs_p = 1;             //Pressure oversampling x 1
     uint8_t osrs_h = 1;             //Humidity oversampling x 1
@@ -78,8 +77,7 @@ void setup()
     // init done
 }
 
-void loop()
-{  
+void loop() {  
 //    signed long int temp_cal;
 //    unsigned long int press_cal,hum_cal;
 //    int temp_act = 0.0, press_act = 0.0, hum_act=0.0;
@@ -103,8 +101,7 @@ void loop()
     delay(2000);
 }
 
-void voltage_aprilia()
-{
+void voltage_aprilia() {
   for(int i=0; i < 10; i++)
   {
     sensorValue0 = analogRead(sensorPin0);
@@ -124,8 +121,7 @@ void voltage_aprilia()
   }
 }
 
-void voltage_arduino()
-{
+void voltage_arduino() {
   for(int i=0; i < 4; i++)
   {
     sensorValue1 = analogRead(sensorPin1);
@@ -145,8 +141,7 @@ void voltage_arduino()
   }
 }
 
-void outside_temperature()
-{
+void outside_temperature() {
   for(int i=0; i < 5; i++)
   {
     signed long int temp_cal;
@@ -177,8 +172,7 @@ void outside_temperature()
   }
 }
 
-void outside_humidity()
-{
+void outside_humidity() {
   for(int i=0; i < 2; i++)
   {
     unsigned long int hum_cal;
@@ -209,8 +203,7 @@ void outside_humidity()
   }
 }
 
-void onebutton()
-{
+void onebutton() {
     onebutton_time = millis();
     //check to see if increment() was called in the last 250 milliseconds
     if (onebutton_time - onelast_button_time > 250)
@@ -221,8 +214,7 @@ void onebutton()
     }
 }
 
-void twobutton()
-{
+void twobutton() {
     twobutton_time = millis();
     //check to see if increment() was called in the last 250 milliseconds
     if (twobutton_time - twolast_button_time > 250)
@@ -233,15 +225,14 @@ void twobutton()
     }
 }
 
-void readTrim()
-{
+void readTrim() {
     uint8_t data[32],i=0;
     Wire.beginTransmission(BME280_ADDRESS);
     Wire.write(0x88);
     Wire.endTransmission();
     Wire.requestFrom(BME280_ADDRESS,24);
-    while(Wire.available())
-    {
+    
+    while(Wire.available()) {
         data[i] = Wire.read();
         i++;
     }
@@ -257,11 +248,12 @@ void readTrim()
     Wire.write(0xE1);
     Wire.endTransmission();
     Wire.requestFrom(BME280_ADDRESS,7);
-    while(Wire.available())
-    {
+
+    while(Wire.available()) {
         data[i] = Wire.read();
         i++;    
     }
+
     dig_T1 = (data[1] << 8) | data[0];
     dig_T2 = (data[3] << 8) | data[2];
     dig_T3 = (data[5] << 8) | data[4];
@@ -281,16 +273,15 @@ void readTrim()
     dig_H5 = (data[30] << 4) | ((data[29] >> 4) & 0x0F);
     dig_H6 = data[31];   
 }
-void writeReg(uint8_t reg_address, uint8_t data)
-{
+
+void writeReg(uint8_t reg_address, uint8_t data) {
     Wire.beginTransmission(BME280_ADDRESS);
     Wire.write(reg_address);
     Wire.write(data);
     Wire.endTransmission();    
 }
 
-void readData()
-{
+void readData() {
     int i = 0;
     uint32_t data[8];
     Wire.beginTransmission(BME280_ADDRESS);
@@ -307,8 +298,7 @@ void readData()
     hum_raw  = (data[6] << 8) | data[7];
 }
 
-signed long int calibration_T(signed long int adc_T)
-{
+signed long int calibration_T(signed long int adc_T) {
     signed long int var1, var2, T;
     var1 = ((((adc_T >> 3) - ((signed long int)dig_T1<<1))) * ((signed long int)dig_T2)) >> 11;
     var2 = (((((adc_T >> 4) - ((signed long int)dig_T1)) * ((adc_T>>4) - ((signed long int)dig_T1))) >> 12) * ((signed long int)dig_T3)) >> 14;
@@ -318,8 +308,7 @@ signed long int calibration_T(signed long int adc_T)
     return T; 
 }
 
-unsigned long int calibration_P(signed long int adc_P)
-{
+unsigned long int calibration_P(signed long int adc_P) {
     signed long int var1, var2;
     unsigned long int P;
     var1 = (((signed long int)t_fine)>>1) - (signed long int)64000;
@@ -347,8 +336,7 @@ unsigned long int calibration_P(signed long int adc_P)
     return P;
 }
 
-unsigned long int calibration_H(signed long int adc_H)
-{
+unsigned long int calibration_H(signed long int adc_H) {
     signed long int v_x1;
     
     v_x1 = (t_fine - ((signed long int)76800));
