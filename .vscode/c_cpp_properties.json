@@ -1,61 +1,19 @@
 {
     "configurations": [
         {
-            "name": "Mac",
-            "includePath": [
-                "/usr/include",
-                "/usr/local/include",
-                "${workspaceRoot}"
-            ],
-            "defines": [],
-            "intelliSenseMode": "clang-x64",
-            "browse": {
-                "path": [
-                    "/usr/include",
-                    "/usr/local/include",
-                    "${workspaceRoot}"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            },
-            "macFrameworkPath": [
-                "/System/Library/Frameworks",
-                "/Library/Frameworks"
-            ]
-        },
-        {
-            "name": "Linux",
-            "includePath": [
-                "/usr/include",
-                "/usr/local/include",
-                "${workspaceRoot}"
-            ],
-            "defines": [],
-            "intelliSenseMode": "clang-x64",
-            "browse": {
-                "path": [
-                    "/usr/include",
-                    "/usr/local/include",
-                    "${workspaceRoot}"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
-        },
-        {
             "name": "Win32",
             "includePath": [
                 "${workspaceRoot}",
-                "C:\\Users\\ateusch\\Programming\\Arduino"
-            ],
-            "defines": [
-                "UBRRH"
+                "C:\\Users\\ateusch\\Programming\\Arduino",
+                "C:\\Users\\ateusch\\Programming\\Arduino\\libraries\\Adafruit_GFX_Library",
+                "C:\\Users\\ateusch\\Programming\\Arduino\\libraries\\Adafruit_SSD1306",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": false,
-                "databaseFilename": "",
                 "path": [
-                    "C:\\Program Files (x86)\\Arduino",
+                    "${workspaceRoot}",
+                    "C:\\Users\\ateusch\\Programming\\Arduino",
                     "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino"
                 ]
             },

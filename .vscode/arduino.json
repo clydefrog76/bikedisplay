@@ -1,5 +1,5 @@
 {
-    "board": "arduino:avr:uno",
+    "sketch": "bikedisplay.ino",
     "port": "COM1",
-    "sketch": "bikedisplay.ino"
+    "board": "arduino:avr:uno"
 }
